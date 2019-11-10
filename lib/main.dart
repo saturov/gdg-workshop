@@ -6,7 +6,6 @@ import 'package:flutter_app/ui/styles/styles.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -15,10 +14,11 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         backgroundColor: Colors.blue,
         body: FlareActor(
-          //todo add Flare file
           flrSplashLogo,
           animation: 'Untitled',
-          //callback: wm.onAnimationCompleted,
+          callback: (name) {
+            //todo навигация на экран запроса гео-пермишна
+          },
         ),
       ),
     );
