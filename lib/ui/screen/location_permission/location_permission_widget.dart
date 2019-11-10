@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 class LocationPermissionScreen extends StatefulWidget {
   @override
@@ -34,7 +35,7 @@ class LocationPermissionState extends State {
                   child: MaterialButton(
                     color: Colors.blue,
                     onPressed: () => {
-                      //todo ask for the location permission
+                      requestPermission(PermissionGroup.location),
                     },
                     child: Text(
                       'Замечательно',
@@ -51,5 +52,11 @@ class LocationPermissionState extends State {
         ),
       ),
     );
+  }
+
+  Future<void> requestPermission(PermissionGroup permission) async {
+    final List<PermissionGroup> permissions = <PermissionGroup>[permission];
+    final Map<PermissionGroup, PermissionStatus> permissionRequestResult =
+        await PermissionHandler().requestPermissions(permissions);
   }
 }
