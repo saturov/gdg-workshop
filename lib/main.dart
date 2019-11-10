@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/ui/assets/assets.dart';
 import 'package:flutter_app/ui/styles/styles.dart';
 
+import 'ui/screen/location_permission/location_permission_widget.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -13,11 +15,19 @@ class MyApp extends StatelessWidget {
       theme: themeData,
       home: Scaffold(
         backgroundColor: Colors.blue,
-        body: FlareActor(
-          flrSplashLogo,
-          animation: 'Untitled',
-          callback: (name) {
-            //todo навигация на экран запроса гео-пермишна
+        body: Builder(
+          builder: (BuildContext context) {
+            return FlareActor(
+              flrSplashLogo,
+              animation: 'Untitled',
+              callback: (name) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => LocationPermissionScreen()),
+                );
+              },
+            );
           },
         ),
       ),
