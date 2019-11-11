@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app/ui/screen/cities/cities_list_widget.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 class LocationPermissionScreen extends StatelessWidget {
@@ -28,8 +29,18 @@ class LocationPermissionScreen extends StatelessWidget {
                   ),
                   child: MaterialButton(
                     color: Colors.blue,
-                    onPressed: () => {
-                      requestPermission(PermissionGroup.location),
+                    onPressed: () {
+                      Future<bool> isGranted = requestPermission(
+                          PermissionGroup.location);
+                      isGranted.then((onValue) {
+                        if (onValue) {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => CitiesListScreen()),
+                          );
+                        }
+                      });
                     },
                     child: Text(
                       'Замечательно',
@@ -48,15 +59,15 @@ class LocationPermissionScreen extends StatelessWidget {
     );
   }
 
-  Future<void> requestPermission(PermissionGroup permission) async {
+  Future<bool> requestPermission(PermissionGroup permission) async {
     final List<PermissionGroup> permissions = <PermissionGroup>[permission];
     final Map<PermissionGroup, PermissionStatus> permissionRequestResult =
     await PermissionHandler().requestPermissions(permissions);
     permissionRequestResult.forEach((permissionGroup, permissionStatus) {
       if (permissionStatus != PermissionStatus.granted) {
-        return;
+        return false;
       }
     });
-    //todo navigate to cities list screen
+    return true;
   }
 }
