@@ -2,14 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
 
-class LocationPermissionScreen extends StatefulWidget {
-  @override
-  State<StatefulWidget> createState() {
-    return LocationPermissionState();
-  }
-}
+class LocationPermissionScreen extends StatelessWidget {
 
-class LocationPermissionState extends State {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,7 +51,7 @@ class LocationPermissionState extends State {
   Future<void> requestPermission(PermissionGroup permission) async {
     final List<PermissionGroup> permissions = <PermissionGroup>[permission];
     final Map<PermissionGroup, PermissionStatus> permissionRequestResult =
-        await PermissionHandler().requestPermissions(permissions);
+    await PermissionHandler().requestPermissions(permissions);
     permissionRequestResult.forEach((permissionGroup, permissionStatus) {
       if (permissionStatus != PermissionStatus.granted) {
         return;
