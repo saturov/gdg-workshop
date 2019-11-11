@@ -13,9 +13,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: themeData,
-      home: Scaffold(
-        backgroundColor: Colors.blue,
-        body: Builder(
+      home: Container(
+        color: Colors.blue,
+        child: Builder(
           builder: (BuildContext context) {
             return FlareActor(
               flrSplashLogo,
