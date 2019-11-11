@@ -1,15 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app/ui/screen/cities/cities_list_widget.dart';
 import 'package:permission_handler/permission_handler.dart';
 
-class LocationPermissionScreen extends StatefulWidget {
-  @override
-  State<StatefulWidget> createState() {
-    return LocationPermissionState();
-  }
-}
+class LocationPermissionScreen extends StatelessWidget {
 
-class LocationPermissionState extends State {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,8 +29,18 @@ class LocationPermissionState extends State {
                   ),
                   child: MaterialButton(
                     color: Colors.blue,
-                    onPressed: () => {
-                      requestPermission(PermissionGroup.location),
+                    onPressed: () {
+                      Future<bool> isGranted = requestPermission(
+                          PermissionGroup.location);
+                      isGranted.then((onValue) {
+                        if (onValue) {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => CitiesListScreen()),
+                          );
+                        }
+                      });
                     },
                     child: Text(
                       'Замечательно',
@@ -54,15 +59,15 @@ class LocationPermissionState extends State {
     );
   }
 
-  Future<void> requestPermission(PermissionGroup permission) async {
+  Future<bool> requestPermission(PermissionGroup permission) async {
     final List<PermissionGroup> permissions = <PermissionGroup>[permission];
     final Map<PermissionGroup, PermissionStatus> permissionRequestResult =
-        await PermissionHandler().requestPermissions(permissions);
-    permissionRequestResult.forEach((permissionGroup, permissionStatus) {
+    await PermissionHandler().requestPermissions(permissions);
+    for (PermissionStatus permissionStatus in permissionRequestResult.values) {
       if (permissionStatus != PermissionStatus.granted) {
-        return;
+        return false;
       }
-    });
-    //todo navigate to cities list screen
+    }
+    return true;
   }
 }
