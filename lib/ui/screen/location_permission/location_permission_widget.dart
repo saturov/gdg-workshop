@@ -63,11 +63,11 @@ class LocationPermissionScreen extends StatelessWidget {
     final List<PermissionGroup> permissions = <PermissionGroup>[permission];
     final Map<PermissionGroup, PermissionStatus> permissionRequestResult =
     await PermissionHandler().requestPermissions(permissions);
-    permissionRequestResult.forEach((permissionGroup, permissionStatus) {
+    for (PermissionStatus permissionStatus in permissionRequestResult.values) {
       if (permissionStatus != PermissionStatus.granted) {
         return false;
       }
-    });
+    }
     return true;
   }
 }
