@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app/entity/city.dart';
 
 class CitiesListScreen extends StatefulWidget {
   @override
@@ -16,7 +17,7 @@ class CitiesListScreenState extends State {
   @override
   void initState() {
     extractJson().then((value) {
-      rawJson = value;
+      //rawJson = value;
     });
     super.initState();
   }
@@ -37,10 +38,16 @@ class CitiesListScreenState extends State {
     );
   }
 
-  Future<String> extractJson() async {
+  Future<List<City>> extractJson() async {
     String data = await DefaultAssetBundle.of(context)
         .loadString("res/assets/cities.json");
-    final jsonResult = json.decode(data);
-    return jsonResult;
+    Map<String, dynamic> decodedJson = jsonDecode(data);
+    //final jsonResult = json.decode(data);
+    CityList cityList = CityList.fromMappedJson(decodedJson);
+    print("city list = ${cityList.citiesList.toString()}");
+    for (City city in cityList.citiesList) {
+      print("1111 city = ${city.name}");
+    }
+    //return jsonResult;
   }
 }
