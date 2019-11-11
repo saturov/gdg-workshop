@@ -58,5 +58,11 @@ class LocationPermissionState extends State {
     final List<PermissionGroup> permissions = <PermissionGroup>[permission];
     final Map<PermissionGroup, PermissionStatus> permissionRequestResult =
         await PermissionHandler().requestPermissions(permissions);
+    permissionRequestResult.forEach((permissionGroup, permissionStatus) {
+      if (permissionStatus != PermissionStatus.granted) {
+        return;
+      }
+    });
+    //todo navigate to cities list screen
   }
 }
