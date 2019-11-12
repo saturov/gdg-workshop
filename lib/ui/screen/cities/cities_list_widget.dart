@@ -12,12 +12,14 @@ class CitiesListScreen extends StatefulWidget {
 }
 
 class CitiesListScreenState extends State {
-  String rawJson = "";
+  List<City> cities = List();
 
   @override
   void initState() {
-    extractJson().then((value) {
-      //rawJson = value;
+    parseCitiesList().then((value) {
+      setState(() {
+        cities = value;
+      });
     });
     super.initState();
   }
@@ -29,25 +31,53 @@ class CitiesListScreenState extends State {
         title: Text('GDG Everywhere'),
         automaticallyImplyLeading: false,
       ),
-      body: Text(
-        rawJson,
-        style: TextStyle(
-          color: Colors.black,
-        ),
+      body: ListView.builder(
+        itemCount: cities != null ? cities.length : 0,
+        itemBuilder: (context, index) {
+          return CustomListItem(
+            imageUrl: cities[index].imageUrl,
+            name: cities[index].name,
+          );
+        },
       ),
     );
   }
 
-  Future<List<City>> extractJson() async {
+  Future<List<City>> parseCitiesList() async {
     String data = await DefaultAssetBundle.of(context)
         .loadString("res/assets/cities.json");
     Map<String, dynamic> decodedJson = jsonDecode(data);
-    //final jsonResult = json.decode(data);
     CityList cityList = CityList.fromMappedJson(decodedJson);
-    print("city list = ${cityList.citiesList.toString()}");
-    for (City city in cityList.citiesList) {
-      print("1111 city = ${city.name}");
-    }
-    //return jsonResult;
+    return cityList.citiesList;
+  }
+}
+
+class CustomListItem extends StatelessWidget {
+  const CustomListItem({
+    this.imageUrl,
+    this.name,
+  });
+
+  final String imageUrl;
+  final String name;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 5.0),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Container(
+            height: 60.0,
+            width: 60.0,
+            child: Image.network(
+              imageUrl,
+            ),
+          ),
+          Text(name),
+        ],
+      ),
+    );
   }
 }

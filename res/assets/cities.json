@@ -2,107 +2,133 @@
   "cities": [
     {
       "id": 1,
-      "name": "Astrakhan"
+      "name": "Astrakhan",
+      "image": "http://www.rewizor.ru/files/256634xjn.jpg"
     },
     {
       "id": 2,
-      "name": "Chita"
+      "name": "Chita",
+      "image": "http://www.rewizor.ru/files/256634xjn.jpg"
     },
     {
       "id": 3,
-      "name": "Ekaterinburg"
+      "name": "Ekaterinburg",
+      "image": "http://www.rewizor.ru/files/256634xjn.jpg"
     },
     {
       "id": 4,
-      "name": "Khabarovsk"
+      "name": "Khabarovsk",
+      "image": "http://www.rewizor.ru/files/256634xjn.jpg"
     },
     {
       "id": 5,
-      "name": "Innopolis"
+      "name": "Innopolis",
+      "image": "http://www.rewizor.ru/files/256634xjn.jpg"
     },
     {
       "id": 6,
-      "name": "Izhevsk"
+      "name": "Izhevsk",
+      "image": "http://www.rewizor.ru/files/256634xjn.jpg"
     },
     {
       "id": 7,
-      "name": "Jaroslavl"
+      "name": "Jaroslavl",
+      "image": "http://www.rewizor.ru/files/256634xjn.jpg"
     },
     {
       "id": 8,
-      "name": "Kaliningrad"
+      "name": "Kaliningrad",
+      "image": "http://www.rewizor.ru/files/256634xjn.jpg"
     },
     {
       "id": 9,
-      "name": "Kazan"
+      "name": "Kazan",
+      "image": "http://www.rewizor.ru/files/256634xjn.jpg"
     },
     {
       "id": 10,
-      "name": "Krasnodar"
+      "name": "Krasnodar",
+      "image": "http://www.rewizor.ru/files/256634xjn.jpg"
     },
     {
       "id": 11,
-      "name": "Machachkala"
+      "name": "Machachkala",
+      "image": "http://www.rewizor.ru/files/256634xjn.jpg"
     },
     {
       "id": 12,
-      "name": "Magas"
+      "name": "Magas",
+      "image": "http://www.rewizor.ru/files/256634xjn.jpg"
     },
     {
       "id": 13,
-      "name": "Moscow"
+      "name": "Moscow",
+      "image": "http://www.rewizor.ru/files/256634xjn.jpg"
     },
     {
       "id": 14,
-      "name": "Nizhny Novgorod"
+      "name": "Nizhny Novgorod",
+      "image": "http://www.rewizor.ru/files/256634xjn.jpg"
     },
     {
       "id": 15,
-      "name": "Novosibirsk"
+      "name": "Novosibirsk",
+      "image": "http://www.rewizor.ru/files/256634xjn.jpg"
     },
     {
       "id": 16,
-      "name": "Omsk"
+      "name": "Omsk",
+      "image": "http://www.rewizor.ru/files/256634xjn.jpg"
     },
     {
       "id": 17,
-      "name": "Rostov-on-Don"
+      "name": "Rostov-on-Don",
+      "image": "http://www.rewizor.ru/files/256634xjn.jpg"
     },
     {
       "id": 18,
-      "name": "Saint Petersburg"
+      "name": "Saint Petersburg",
+      "image": "http://www.rewizor.ru/files/256634xjn.jpg"
     },
     {
       "id": 19,
-      "name": "Saratov"
+      "name": "Saratov",
+      "image": "http://www.rewizor.ru/files/256634xjn.jpg"
     },
     {
       "id": 20,
-      "name": "Sochi"
+      "name": "Sochi",
+      "image": "http://www.rewizor.ru/files/256634xjn.jpg"
     },
     {
       "id": 21,
-      "name": "Tyumen"
+      "name": "Tyumen",
+      "image": "http://www.rewizor.ru/files/256634xjn.jpg"
     },
     {
       "id": 22,
-      "name": "Ufa"
+      "name": "Ufa",
+      "image": "http://www.rewizor.ru/files/256634xjn.jpg"
     },
     {
       "id": 23,
-      "name": "Ulan-Ude"
+      "name": "Ulan-Ude",
+      "image": "http://www.rewizor.ru/files/256634xjn.jpg"
     },
     {
       "id": 24,
-      "name": "Vladikavkaz"
+      "name": "Vladikavkaz",
+      "image": "http://www.rewizor.ru/files/256634xjn.jpg"
     },
     {
       "id": 25,
-      "name": "Vladivostok"
+      "name": "Vladivostok",
+      "image": "http://www.rewizor.ru/files/256634xjn.jpg"
     },
     {
       "id": 26,
-      "name": "Voronezh"
+      "name": "Voronezh",
+      "image": "http://www.rewizor.ru/files/256634xjn.jpg"
     }
   ]
 }
