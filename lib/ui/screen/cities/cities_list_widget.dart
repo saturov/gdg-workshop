@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_app/entity/city.dart';
 
 class CitiesListScreen extends StatefulWidget {
@@ -64,18 +65,31 @@ class CustomListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 5.0),
+      padding: const EdgeInsets.all(16.0),
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          Container(
-            height: 60.0,
-            width: 60.0,
-            child: Image.network(
-              imageUrl,
+          ClipRRect(
+            borderRadius: BorderRadius.circular(16.0),
+            child: Container(
+              height: 120.0,
+              width: 120.0,
+              child: Image.network(
+                imageUrl,
+                fit: BoxFit.cover,
+              ),
             ),
           ),
-          Text(name),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Text(
+              name,
+              maxLines: 2,
+              style: TextStyle(
+                fontSize: 25.0,
+              ),
+            ),
+          ),
         ],
       ),
     );
