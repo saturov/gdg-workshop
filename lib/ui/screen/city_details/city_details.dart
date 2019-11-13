@@ -4,12 +4,14 @@ class CityDetailsScreen extends StatelessWidget {
   final String cityName;
   final String photoUrl;
   final String description;
+  final int index;
 
   CityDetailsScreen({
     Key key,
     this.cityName,
     this.photoUrl,
     this.description,
+    this.index,
   }) : super(key: key);
 
   @override
@@ -23,7 +25,7 @@ class CityDetailsScreen extends StatelessWidget {
             flexibleSpace: FlexibleSpaceBar(
               title: Text(cityName),
               background: Hero(
-                tag: 'photo',
+                tag: 'photo{$index}',
                 child: Image.network(
                   photoUrl,
                   fit: BoxFit.cover,

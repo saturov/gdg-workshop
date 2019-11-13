@@ -37,7 +37,8 @@ class LocationPermissionScreen extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => CitiesListScreen()),
+                                builder: (context) => CitiesListScreen(),
+                            ),
                           );
                         }
                       });

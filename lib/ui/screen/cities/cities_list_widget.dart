@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_app/entity/city.dart';
+import 'package:flutter_app/ui/screen/city_details/city_details.dart';
 
 class CitiesListScreen extends StatefulWidget {
   @override
@@ -37,11 +38,21 @@ class CitiesListScreenState extends State {
         itemBuilder: (context, index) {
           return InkWell(
             onTap: () {
-              /// todo navigate to city details screen
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => CityDetailsScreen(
+                          cityName: cities[index].name,
+                          photoUrl: cities[index].imageUrl,
+                          description: "",
+                          index: index,
+                        )),
+              );
             },
             child: CustomListItem(
               imageUrl: cities[index].imageUrl,
               name: cities[index].name,
+              index: index,
             ),
           );
         },
@@ -59,13 +70,11 @@ class CitiesListScreenState extends State {
 }
 
 class CustomListItem extends StatelessWidget {
-  const CustomListItem({
-    this.imageUrl,
-    this.name,
-  });
+  const CustomListItem({this.imageUrl, this.name, this.index});
 
   final String imageUrl;
   final String name;
+  final int index;
 
   @override
   Widget build(BuildContext context) {
@@ -76,12 +85,15 @@ class CustomListItem extends StatelessWidget {
         children: <Widget>[
           ClipRRect(
             borderRadius: BorderRadius.circular(16.0),
-            child: Container(
-              height: 120.0,
-              width: 120.0,
-              child: Image.network(
-                imageUrl,
-                fit: BoxFit.cover,
+            child: Hero(
+              tag: 'photo{$index}',
+              child: Container(
+                height: 120.0,
+                width: 120.0,
+                child: Image.network(
+                  imageUrl,
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
           ),
