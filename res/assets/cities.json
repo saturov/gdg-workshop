@@ -1,0 +1,134 @@
+{
+  "cities": [
+    {
+      "id": 1,
+      "name": "Astrakhan",
+      "image": "https://i.ibb.co/Ks1XDhH/astrakhan.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Chita",
+      "image": "https://i.ibb.co/HdbTwjh/chita.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Ekaterinburg",
+      "image": "https://i.ibb.co/1nBFF3y/ekaterinburg.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Khabarovsk",
+      "image": "https://i.ibb.co/31VTkYt/khabarovsk.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Innopolis",
+      "image": "https://i.ibb.co/8NX380W/innopolis.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Izhevsk",
+      "image": "https://i.ibb.co/Vv3gVsv/izhevsk.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Jaroslavl",
+      "image": "https://i.ibb.co/YPxDDpV/jaroslavl.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Kaliningrad",
+      "image": "https://i.ibb.co/gDvsb25/kaliningrad.jpg"
+    },
+    {
+      "id": 9,
+      "name": "Kazan",
+      "image": "https://i.ibb.co/zs5xm2f/kazan.jpg"
+    },
+    {
+      "id": 10,
+      "name": "Krasnodar",
+      "image": "https://i.ibb.co/WBR1f8H/krasnodar.jpg"
+    },
+    {
+      "id": 11,
+      "name": "Machachkala",
+      "image": "https://i.ibb.co/L8xZzQF/mahachkala.jpg"
+    },
+    {
+      "id": 12,
+      "name": "Magas",
+      "image": "https://i.ibb.co/r2XD4nT/magas.jpg"
+    },
+    {
+      "id": 13,
+      "name": "Moscow",
+      "image": "https://i.ibb.co/BLLn0cd/moscow.jpg"
+    },
+    {
+      "id": 14,
+      "name": "Nizhny Novgorod",
+      "image": "https://i.ibb.co/BHp7Z5n/nizhny-novgorod.jpg"
+    },
+    {
+      "id": 15,
+      "name": "Novosibirsk",
+      "image": "https://i.ibb.co/BrTYfKc/novosibirsk.jpg"
+    },
+    {
+      "id": 16,
+      "name": "Omsk",
+      "image": "https://i.ibb.co/518rGRp/omsk.jpg"
+    },
+    {
+      "id": 17,
+      "name": "Rostov-on-Don",
+      "image": "https://i.ibb.co/zGQZFQg/rostov-on-don.jpg"
+    },
+    {
+      "id": 18,
+      "name": "Saint Petersburg",
+      "image": "https://i.ibb.co/kJDF5gx/saint-petersburg.jpg"
+    },
+    {
+      "id": 19,
+      "name": "Saratov",
+      "image": "https://i.ibb.co/m9rGXrs/saratov.png"
+    },
+    {
+      "id": 20,
+      "name": "Sochi",
+      "image": "https://i.ibb.co/gFs8W4G/sochi.jpg"
+    },
+    {
+      "id": 21,
+      "name": "Tyumen",
+      "image": "https://i.ibb.co/N1G6sRw/tumen.jpg"
+    },
+    {
+      "id": 22,
+      "name": "Ufa",
+      "image": "https://i.ibb.co/k87cZ52/ufa.jpg"
+    },
+    {
+      "id": 23,
+      "name": "Ulan-Ude",
+      "image": "https://i.ibb.co/KLhzBYd/ulan-ude.jpg"
+    },
+    {
+      "id": 24,
+      "name": "Vladikavkaz",
+      "image": "https://i.ibb.co/jWSX44P/vladikavkaz.jpg"
+    },
+    {
+      "id": 25,
+      "name": "Vladivostok",
+      "image": "https://i.ibb.co/dcbnhSm/vladivostok.jpg"
+    },
+    {
+      "id": 26,
+      "name": "Voronezh",
+      "image": "https://i.ibb.co/rt5Xq00/voronezh.jpg"
+    }
+  ]
+}
