@@ -1,6 +1,7 @@
 import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/ui/assets/assets.dart';
+import 'package:flutter_app/ui/screen/battery_level/battery_level_screen.dart';
 import 'package:flutter_app/ui/styles/styles.dart';
 
 import 'ui/screen/location_permission/location_permission_widget.dart';
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => LocationPermissionScreen()),
+                      builder: (context) => BatteryLevelScreen()),
                 );
               },
             );
