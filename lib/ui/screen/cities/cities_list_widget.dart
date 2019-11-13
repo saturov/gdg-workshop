@@ -80,13 +80,15 @@ class CustomListItem extends StatelessWidget {
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Text(
-              name,
-              maxLines: 2,
-              style: TextStyle(
-                fontSize: 25.0,
+          Flexible(
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Text(
+                name,
+                maxLines: 2,
+                style: TextStyle(
+                  fontSize: 25.0,
+                ),
               ),
             ),
           ),
