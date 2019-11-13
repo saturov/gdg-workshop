@@ -35,9 +35,14 @@ class CitiesListScreenState extends State {
       body: ListView.builder(
         itemCount: cities != null ? cities.length : 0,
         itemBuilder: (context, index) {
-          return CustomListItem(
-            imageUrl: cities[index].imageUrl,
-            name: cities[index].name,
+          return InkWell(
+            onTap: () {
+              /// todo navigate to city details screen
+            },
+            child: CustomListItem(
+              imageUrl: cities[index].imageUrl,
+              name: cities[index].name,
+            ),
           );
         },
       ),
