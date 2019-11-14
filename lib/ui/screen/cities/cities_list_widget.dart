@@ -52,12 +52,6 @@ class CitiesListScreenState extends State {
     );
   }
 
-  Future<List<City>> parseCitiesList() async {
-    String data = await DefaultAssetBundle.of(context)
-        .loadString("res/assets/cities.json");
-    return decodeCitiesJson(data);
-  }
-
   List<City> decodeCitiesJson(String rawData) {
     Map<String, dynamic> decodedJson = jsonDecode(rawData);
     CityList cityList = CityList.fromMappedJson(decodedJson);
