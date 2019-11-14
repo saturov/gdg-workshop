@@ -44,7 +44,7 @@ class CitiesListScreenState extends State {
                     builder: (context) => CityDetailsScreen(
                           cityName: cities[index].name,
                           photoUrl: cities[index].imageUrl,
-                          description: "",
+                          description: cities[index].description,
                           index: index,
                         )),
               );

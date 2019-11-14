@@ -2,18 +2,21 @@ class City {
   final int id;
   final String name;
   final String imageUrl;
+  final String description;
 
-  City(this.id, this.name, this.imageUrl);
+  City(this.id, this.name, this.imageUrl, this.description);
 
   City.fromMappedJson(Map<String, dynamic> json)
       : id = json['id'],
         name = json['name'],
-        imageUrl = json['image'] ?? "";
+        imageUrl = json['image'] ?? "",
+        description = json['description'] ?? "";
 
   Map<String, dynamic> toJson() => {
         'id': id,
         'name': name,
-        'image': imageUrl
+        'image': imageUrl,
+        'description': description,
       };
 }
 

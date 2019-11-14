@@ -35,8 +35,13 @@ class CityDetailsScreen extends StatelessWidget {
           ),
         ],
         body: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Text(description),
+          padding: const EdgeInsets.all(16.0),
+          child: Text(
+            description,
+            style: TextStyle(
+              fontSize: 16.0,
+            ),
+          ),
         ),
       ),
     );
