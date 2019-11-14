@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_app/entity/city.dart';
+import 'package:http/http.dart' as http;
 
 class CitiesListScreen extends StatefulWidget {
   @override
@@ -13,18 +14,6 @@ class CitiesListScreen extends StatefulWidget {
 }
 
 class CitiesListScreenState extends State {
-  List<City> cities = List();
-
-  @override
-  void initState() {
-    parseCitiesList().then((value) {
-      setState(() {
-        cities = value;
-      });
-    });
-    super.initState();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,17 +21,31 @@ class CitiesListScreenState extends State {
         title: Text('GDG Everywhere'),
         automaticallyImplyLeading: false,
       ),
-      body: ListView.builder(
-        itemCount: cities != null ? cities.length : 0,
-        itemBuilder: (context, index) {
-          return InkWell(
-            onTap: () {
-              /// todo navigate to city details screen
+      body: FutureBuilder<http.Response>(
+        future: http.get('https://api.myjson.com/bins/ao7w6'),
+        builder: (context, snapshot) {
+          if (!snapshot.hasData) {
+            return Center(
+              child: CircularProgressIndicator(),
+            );
+          }
+
+          final http.Response response = snapshot.data;
+          final List<City> cities = decodeCitiesJson(response.body);
+
+          return ListView.builder(
+            itemCount: cities != null ? cities.length : 0,
+            itemBuilder: (context, index) {
+              return InkWell(
+                onTap: () {
+                  /// todo navigate to city details screen
+                },
+                child: CustomListItem(
+                  imageUrl: cities[index].imageUrl,
+                  name: cities[index].name,
+                ),
+              );
             },
-            child: CustomListItem(
-              imageUrl: cities[index].imageUrl,
-              name: cities[index].name,
-            ),
           );
         },
       ),
@@ -52,7 +55,11 @@ class CitiesListScreenState extends State {
   Future<List<City>> parseCitiesList() async {
     String data = await DefaultAssetBundle.of(context)
         .loadString("res/assets/cities.json");
-    Map<String, dynamic> decodedJson = jsonDecode(data);
+    return decodeCitiesJson(data);
+  }
+
+  List<City> decodeCitiesJson(String rawData) {
+    Map<String, dynamic> decodedJson = jsonDecode(rawData);
     CityList cityList = CityList.fromMappedJson(decodedJson);
     return cityList.citiesList;
   }
