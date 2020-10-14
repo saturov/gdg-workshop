@@ -1,9 +1,8 @@
 import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/ui/assets/assets.dart';
+import 'package:flutter_app/ui/screen/cities/cities_list_widget.dart';
 import 'package:flutter_app/ui/styles/styles.dart';
-
-import 'ui/screen/location_permission/location_permission_widget.dart';
 
 void main() => runApp(MyApp());
 
@@ -21,10 +20,10 @@ class MyApp extends StatelessWidget {
               flrSplashLogo,
               animation: 'Untitled',
               callback: (name) {
-                Navigator.push(
+                Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => LocationPermissionScreen()),
+                      builder: (context) => CitiesListScreen()),
                 );
               },
             );

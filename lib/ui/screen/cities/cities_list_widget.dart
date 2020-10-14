@@ -31,7 +31,6 @@ class CitiesListScreenState extends State {
     return Scaffold(
       appBar: AppBar(
         title: Text('GDG Everywhere'),
-        automaticallyImplyLeading: false,
       ),
       body: ListView.builder(
         itemCount: cities != null ? cities.length : 0,
